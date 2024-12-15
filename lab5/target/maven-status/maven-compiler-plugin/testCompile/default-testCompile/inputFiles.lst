@@ -1,0 +1,7 @@
+/workspaces/Lab-5/lab5/src/test/java/com/example/lab5/service/ValidationServiceTest.java
+/workspaces/Lab-5/lab5/src/test/java/com/example/lab5/controller/QuizControllerTest.java
+/workspaces/Lab-5/lab5/src/test/java/com/example/lab5/Lab5ApplicationTests.java
+/workspaces/Lab-5/lab5/src/test/java/com/example/lab5/controller/EmailControllerTest.java
+/workspaces/Lab-5/lab5/src/test/java/com/example/lab5/controller/HomeControllerTest.java
+/workspaces/Lab-5/lab5/src/test/java/com/example/lab5/controller/PasswordControllerTest.java
+/workspaces/Lab-5/lab5/src/test/java/com/example/lab5/controller/LoginControllerTest.java
