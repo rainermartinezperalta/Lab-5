@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.example.lab5.controller.EmailControllerTest" time="0.481" tests="2" errors="0" skipped="0" failures="2">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.example.lab5.controller.RegistrationControllerTest" time="4.494" tests="2" errors="0" skipped="0" failures="2">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -57,13 +57,13 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="testValidateEmailValid" classname="com.example.lab5.controller.EmailControllerTest" time="0.009">
-    <failure message="Status expected:&lt;200&gt; but was:&lt;403&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Status expected:<200> but was:<403>
+  <testcase name="testShowRegistrationForm" classname="com.example.lab5.controller.RegistrationControllerTest" time="1.276">
+    <failure message="Status expected:&lt;200&gt; but was:&lt;401&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Status expected:<200> but was:<401>
 	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:59)
 	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:122)
 	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$9(StatusResultMatchers.java:637)
 	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
-	at com.example.lab5.controller.EmailControllerTest.testValidateEmailValid(EmailControllerTest.java:20)
+	at com.example.lab5.controller.RegistrationControllerTest.testShowRegistrationForm(RegistrationControllerTest.java:20)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -136,8 +136,8 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
 ]]></failure>
-    <system-out><![CDATA[2024-12-15T10:50:41.960Z  INFO 91074 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.lab5.controller.EmailControllerTest]: EmailControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2024-12-15T10:50:42.006Z  INFO 91074 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.lab5.Lab5Application for test class com.example.lab5.controller.EmailControllerTest
+    <system-out><![CDATA[10:50:37.747 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.lab5.controller.RegistrationControllerTest]: RegistrationControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+10:50:37.943 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.lab5.Lab5Application for test class com.example.lab5.controller.RegistrationControllerTest
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -147,22 +147,22 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.1.4)
 
-2024-12-15T10:50:42.079Z  INFO 91074 --- [           main] c.e.lab5.controller.EmailControllerTest  : Starting EmailControllerTest using Java 17.0.13 with PID 91074 (started by codespace in /workspaces/Lab-5/lab5)
-2024-12-15T10:50:42.079Z  INFO 91074 --- [           main] c.e.lab5.controller.EmailControllerTest  : No active profile set, falling back to 1 default profile: "default"
-2024-12-15T10:50:42.339Z  WARN 91074 --- [           main] o.thymeleaf.templatemode.TemplateMode    : [THYMELEAF][main] Unknown Template Mode 'HTML5'. Must be one of: 'HTML', 'XML', 'TEXT', 'JAVASCRIPT', 'CSS', 'RAW'. Using default Template Mode 'HTML'.
-2024-12-15T10:50:42.376Z  INFO 91074 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7e31062c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@595fed99, org.springframework.security.web.context.SecurityContextHolderFilter@7c4d1c7b, org.springframework.security.web.header.HeaderWriterFilter@6ad6ae45, org.springframework.security.web.csrf.CsrfFilter@6eed46e9, org.springframework.security.web.authentication.logout.LogoutFilter@1bfa5a13, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5c5f0edc, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@690df641, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@7d522180, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@153cfd86, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7893c715, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@36f6d25c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@ff03361, org.springframework.security.web.access.ExceptionTranslationFilter@4d20616a, org.springframework.security.web.access.intercept.AuthorizationFilter@1da75dde]
-2024-12-15T10:50:42.388Z  INFO 91074 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2024-12-15T10:50:42.388Z  INFO 91074 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2024-12-15T10:50:42.389Z  INFO 91074 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2024-12-15T10:50:42.397Z  INFO 91074 --- [           main] c.e.lab5.controller.EmailControllerTest  : Started EmailControllerTest in 0.372 seconds (process running for 6.028)
+2024-12-15T10:50:38.459Z  INFO 91074 --- [           main] c.e.l.c.RegistrationControllerTest       : Starting RegistrationControllerTest using Java 17.0.13 with PID 91074 (started by codespace in /workspaces/Lab-5/lab5)
+2024-12-15T10:50:38.461Z  INFO 91074 --- [           main] c.e.l.c.RegistrationControllerTest       : No active profile set, falling back to 1 default profile: "default"
+2024-12-15T10:50:40.204Z  WARN 91074 --- [           main] o.thymeleaf.templatemode.TemplateMode    : [THYMELEAF][main] Unknown Template Mode 'HTML5'. Must be one of: 'HTML', 'XML', 'TEXT', 'JAVASCRIPT', 'CSS', 'RAW'. Using default Template Mode 'HTML'.
+2024-12-15T10:50:40.423Z  INFO 91074 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4eaa375c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2404b5a, org.springframework.security.web.context.SecurityContextHolderFilter@3440e9cd, org.springframework.security.web.header.HeaderWriterFilter@45ab3bdd, org.springframework.security.web.csrf.CsrfFilter@1665fa54, org.springframework.security.web.authentication.logout.LogoutFilter@13c8ac77, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7cfac39f, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@72976b4, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@3af58f76, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3a3ed300, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@a09303, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5416f8db, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2ead6ba4, org.springframework.security.web.access.ExceptionTranslationFilter@441fbe89, org.springframework.security.web.access.intercept.AuthorizationFilter@d48e998]
+2024-12-15T10:50:40.524Z  INFO 91074 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-12-15T10:50:40.525Z  INFO 91074 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-12-15T10:50:40.533Z  INFO 91074 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 8 ms
+2024-12-15T10:50:40.576Z  INFO 91074 --- [           main] c.e.l.c.RegistrationControllerTest       : Started RegistrationControllerTest in 2.566 seconds (process running for 4.207)
 
 MockHttpServletRequest:
-      HTTP Method = POST
-      Request URI = /validateEmail
-       Parameters = {email=[test@example.com]}
+      HTTP Method = GET
+      Request URI = /register
+       Parameters = {}
           Headers = []
              Body = null
-    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@16b64a03}
+    Session Attrs = {SPRING_SECURITY_SAVED_REQUEST=DefaultSavedRequest [http://localhost/register?continue]}
 
 Handler:
              Type = null
@@ -183,9 +183,9 @@ FlashMap:
        Attributes = null
 
 MockHttpServletResponse:
-           Status = 403
-    Error message = Forbidden
-          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+           Status = 401
+    Error message = Unauthorized
+          Headers = [WWW-Authenticate:"Basic realm="Realm"", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
      Content type = null
              Body = 
     Forwarded URL = null
@@ -193,13 +193,13 @@ MockHttpServletResponse:
           Cookies = []
 ]]></system-out>
   </testcase>
-  <testcase name="testValidateEmailInvalid" classname="com.example.lab5.controller.EmailControllerTest" time="0.007">
+  <testcase name="testRegister" classname="com.example.lab5.controller.RegistrationControllerTest" time="0.023">
     <failure message="Status expected:&lt;200&gt; but was:&lt;403&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Status expected:<200> but was:<403>
 	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:59)
 	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:122)
 	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$9(StatusResultMatchers.java:637)
 	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
-	at com.example.lab5.controller.EmailControllerTest.testValidateEmailInvalid(EmailControllerTest.java:27)
+	at com.example.lab5.controller.RegistrationControllerTest.testRegister(RegistrationControllerTest.java:29)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -275,11 +275,11 @@ MockHttpServletResponse:
     <system-out><![CDATA[
 MockHttpServletRequest:
       HTTP Method = POST
-      Request URI = /validateEmail
-       Parameters = {email=[invalid-email]}
+      Request URI = /registerUser
+       Parameters = {email=[testuser@example.com], password=[password123]}
           Headers = []
              Body = null
-    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@3688baab}
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@3407aa4f}
 
 Handler:
              Type = null

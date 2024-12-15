@@ -2,9 +2,7 @@ package com.example.lab5.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class EmailController {
@@ -16,11 +14,13 @@ public class EmailController {
 
     @PostMapping("/validateEmail")
     public String validateEmail(@RequestParam String email, Model model) {
-        if (email.contains("@") && email.contains(".")) {
-            model.addAttribute("message", "Valid email");
+        String message;
+        if (email.matches("^[\\w.%+-]+@[\\w.-]+\\.[a-zA-Z]{2,}$")) {
+            message = "Valid email address!";
         } else {
-            model.addAttribute("message", "Invalid email");
+            message = "Invalid email address!";
         }
+        model.addAttribute("message", message);
         return "validateEmail";
     }
 }
