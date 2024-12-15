@@ -1,8 +1,8 @@
 com/example/lab5/controller/HomeControllerTest.class
 com/example/lab5/controller/EmailControllerTest.class
-com/example/lab5/controller/RegistrationControllerTest.class
 com/example/lab5/controller/LoginControllerTest.class
 com/example/lab5/controller/PasswordControllerTest.class
+com/example/lab5/config/TestSecurityConfig.class
 com/example/lab5/Lab5ApplicationTests.class
 com/example/lab5/service/ValidationServiceTest.class
 com/example/lab5/controller/QuizControllerTest.class

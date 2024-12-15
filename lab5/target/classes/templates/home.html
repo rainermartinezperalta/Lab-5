@@ -1,16 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-    <h1>Welcome to Lab 5!</h1>
-    <ul>
-        <li><a href="/validateEmail">Validate Email</a></li>
-        <li><a href="/validatePassword">Validate Password</a></li>
-        <li><a href="/register">Register</a></li>
-        <li><a href="/login">Login</a></li>
-        <li><a href="/quiz">Take the Quiz</a></li>
-    </ul>
+    <header>
+        <h1>Welcome to Lab 5</h1>
+    </header>
+    <main>
+        <ul>
+            <li><a href="/validatePassword">Validate Password</a></li>
+            <li><a href="/validateEmail">Validate Email</a></li>
+            <li><a href="/quiz">Take the Quiz</a></li>
+        </ul>
+    </main>
+    <footer>
+        <p>&copy; 2024 Lab 5 Project</p>
+    </footer>
 </body>
 </html>

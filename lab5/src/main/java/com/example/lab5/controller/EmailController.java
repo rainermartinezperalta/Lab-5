@@ -4,6 +4,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 @Controller
 public class EmailController {
 
@@ -13,14 +15,17 @@ public class EmailController {
     }
 
     @PostMapping("/validateEmail")
-    public String validateEmail(@RequestParam String email, Model model) {
-        String message;
-        if (email.matches("^[\\w.%+-]+@[\\w.-]+\\.[a-zA-Z]{2,}$")) {
-            message = "Valid email address!";
-        } else {
-            message = "Invalid email address!";
-        }
-        model.addAttribute("message", message);
+    public String validateEmailHtml(@RequestParam String email, Model model) {
+        boolean isValid = email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$");
+        model.addAttribute("email", email);
+        model.addAttribute("isValid", isValid);
         return "validateEmail";
+    }
+
+    @PostMapping("/api/validateEmail")
+    @ResponseBody
+    public Map<String, Boolean> validateEmailJson(@RequestParam String email) {
+        boolean isValid = email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$");
+        return Map.of("isValid", isValid);
     }
 }

@@ -18,16 +18,8 @@ public class Lab5Application {
     @Bean
     public List<Question> questions() {
         return Arrays.asList(
-            new Question("What is 90 + 0.0003?", "90.0003"),
-            new Question("What is 10^10 * 2?", "20,000,000,000"),
-            new Question("What is the capital of Dominican Republic Called?", "Santo Domingo"),
-            new Question("Where are you headed?", "I'm heading home."),
-            new Question("Where do you live?", "With my parents."),
-            new Question("Where do your parents live?", "They live with me."),
-            new Question("Ok, where do you all live?", "We all live together."),
-            new Question("Ok, so where is your house?", "It's next to my neighbor's house."),
-            new Question("And where does your neighbor live?", "Oou, you wouldn't believe me if I told you."),
-            new Question("Try me.", "Next to my house.")
+            new Question("What is 2 + 2?", "4"),
+            new Question("What is the capital of France?", "Paris")
         );
     }
 }

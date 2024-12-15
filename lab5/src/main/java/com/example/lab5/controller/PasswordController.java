@@ -4,6 +4,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 @Controller
 public class PasswordController {
 
@@ -13,16 +15,21 @@ public class PasswordController {
     }
 
     @PostMapping("/validatePassword")
-    public String validatePassword(@RequestParam String password, Model model) {
-        String message;
-        if (password.length() >= 8 &&
-            password.matches(".*\\d.*") &&
-            password.matches(".*[!@#$%^&*(),.?\":{}|<>].*")) {
-            message = "Valid password!";
-        } else {
-            message = "Invalid password! Must be at least 8 characters, contain a digit, and a special character.";
-        }
-        model.addAttribute("message", message);
+    public String validatePasswordHtml(@RequestParam String password, Model model) {
+        boolean isValid = password.length() >= 8 &&
+                          password.matches(".*\\d.*") &&
+                          password.matches(".*[!@#$%^&*(),.?\":{}|<>].*");
+        model.addAttribute("password", password);
+        model.addAttribute("isValid", isValid);
         return "validatePassword";
+    }
+
+    @PostMapping("/api/validatePassword")
+    @ResponseBody
+    public Map<String, Boolean> validatePasswordJson(@RequestParam String password) {
+        boolean isValid = password.length() >= 8 &&
+                          password.matches(".*\\d.*") &&
+                          password.matches(".*[!@#$%^&*(),.?\":{}|<>].*");
+        return Map.of("isValid", isValid);
     }
 }

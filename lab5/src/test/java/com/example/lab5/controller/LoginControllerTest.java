@@ -1,14 +1,18 @@
 package com.example.lab5.controller;
 
+import com.example.lab5.config.TestSecurityConfig;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.context.annotation.Import;
 import org.springframework.test.web.servlet.MockMvc;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
 @WebMvcTest(LoginController.class)
+@Import(TestSecurityConfig.class)
 public class LoginControllerTest {
 
     @Autowired
@@ -19,26 +23,5 @@ public class LoginControllerTest {
         mockMvc.perform(get("/login"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("login"));
-    }
-
-    @Test
-    public void testProcessLoginWithValidCredentials() throws Exception {
-        mockMvc.perform(post("/processLogin")
-                        .param("username", "testuser")
-                        .param("password", "password123"))
-                .andExpect(status().isOk())
-                .andExpect(view().name("welcome"))
-                .andExpect(model().attribute("username", "testuser"));
-    }
-
-    @Test
-    public void testProcessLoginWithInvalidCredentials() throws Exception {
-        mockMvc.perform(post("/processLogin")
-                        .param("username", "")
-                        .param("password", ""))
-                .andExpect(status().isOk())
-                .andExpect(view().name("login"))
-                .andExpect(model().attributeExists("error"))
-                .andExpect(model().attribute("error", "Invalid username or password!"));
     }
 }

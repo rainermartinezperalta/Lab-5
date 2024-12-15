@@ -1,20 +1,15 @@
 package com.example.lab5.service;
 
-public class ValidationService {
+import org.springframework.stereotype.Service;
 
-    // Validate email with stricter criteria
-    public boolean isValidEmail(String email) {
-        return email != null && email.matches("^[\\w-.]+@[\\w-]+\\.[a-zA-Z]{2,}$");
+@Service
+public class ValidationService {
+    public boolean isValidPassword(String password) {
+        return password != null && password.length() >= 8 &&
+               password.matches(".*\\d.*") && password.matches(".*[!@#$%^&*(),.?\":{}|<>].*");
     }
 
-    // Validate password with enhanced rules
-    public boolean isValidPassword(String password) {
-        if (password == null || password.length() < 8) {
-            return false;
-        }
-        boolean hasDigit = password.matches(".*\\d.*");
-        boolean hasSpecialChar = password.matches(".*[!@#$%^&*(),.?\":{}|<>].*");
-
-        return hasDigit && hasSpecialChar;
+    public boolean isValidEmail(String email) {
+        return email != null && email.matches("^[A-Za-z0-9+_.-]+@(.+)$");
     }
 }

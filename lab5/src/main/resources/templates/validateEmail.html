@@ -1,15 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Validate Email</title>
 </head>
 <body>
     <h1>Validate Email</h1>
     <form action="/validateEmail" method="post">
-        <label for="email">Email Address:</label>
-        <input type="text" id="email" name="email" required><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
         <button type="submit">Validate</button>
     </form>
-    <p>${message}</p>
+    <div th:if="${email != null}">
+        <p>Email: <span th:text="${email}"></span></p>
+        <p th:if="${isValid}" style="color: green;">Valid email!</p>
+        <p th:if="${!isValid}" style="color: red;">Invalid email!</p>
+    </div>
 </body>
 </html>

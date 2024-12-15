@@ -1,18 +1,19 @@
 package com.example.lab5.model;
 
 public class Question {
-    private String text;
+
+    private String question;
     private String answer;
     private String userAnswer;
     private boolean correct;
 
-    public Question(String text, String answer) {
-        this.text = text;
+    public Question(String question, String answer) {
+        this.question = question;
         this.answer = answer;
     }
 
-    public String getText() {
-        return text;
+    public String getQuestion() {
+        return question;
     }
 
     public String getAnswer() {

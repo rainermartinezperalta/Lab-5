@@ -1,70 +1,62 @@
-# Lab 5 - Simple Web Application with REST Endpoints
+# Lab 5 - Spring Boot Web App
 
-Welcome to Lab 5! This project is a simple Java-based web application built using **Spring Boot**. It includes a set of REST endpoints for validating emails, checking password strength, and running a fun quiz.
+Hi there! This is **Lab 5**, a fun and simple web app built with **Spring Boot**. It lets you validate emails, check password strength, and take a quiz. Let’s dive in!
 
 ---
 
-## 🛠️ How to Set Up and Run
+## 🚀 Getting Started
 
-1. **Clone the repository**:
+1. **Clone the project**:
    ```bash
    git clone <your-repo-url>
    cd lab5
    ```
 
-2. **Build and run the app**:
+2. **Run the app**:
+   - If you’re using Maven Wrapper:
+     ```bash
+     ./mvnw spring-boot:run
+     ```
+   - Or, if you have Maven installed:
+     ```bash
+     mvn spring-boot:run
+     ```
+
+3. **Open in your browser**:
+   - Head to [http://localhost:8080](http://localhost:8080) to see the app in action.
+
+4. **Run tests** (if you want to check everything works):
    ```bash
-   ./mvnw spring-boot:run
+   ./mvnw test
    ```
 
-3. **Access the application**:
-   - Visit `http://localhost:8080` in your browser.
+---
 
-4. **Run tests**:
-   ```bash
-   ./mvnw clean test
-   ```
-   This will run all the tests and display results in the terminal.
+## 🌟 Features
+
+### 1. **Email Validation**
+   - Enter an email to check if it’s valid.
+   - Try it: [http://localhost:8080/validateEmail](http://localhost:8080/validateEmail).
+
+### 2. **Password Strength Checker**
+   - Check if your password is strong enough (must be at least 8 characters, include a number, and a special symbol like `!@#$`).
+   - Try it: [http://localhost:8080/validatePassword](http://localhost:8080/validatePassword).
+
+### 3. **Quiz**
+   - Take a fun quiz with 10 questions and see how well you do!
+   - Try it: [http://localhost:8080/quiz](http://localhost:8080/quiz).
 
 ---
 
-## 📋 Features
+## 🗂️ How It’s Organized
 
-1. **Email Validation**:
-   - Endpoint: `/validate-email`
-   - Accepts an email address and checks if it’s valid.
-
-2. **Password Strength Check**:
-   - Endpoint: `/check-password`
-   - Analyzes password strength and provides feedback.
-
-3. **Quiz**:
-   - Endpoint: `/quiz`
-   - A fun quiz that displays questions and evaluates your answers.
+- **Code**: `src/main/java`
+- **Tests**: `src/test/java`
+- **Web Pages**: `src/main/resources/templates`
+- **Static Files (CSS, etc.)**: `src/main/resources/static`
 
 ---
 
-## 🚀 Try It Out
+## ❤️ Thanks for Checking It Out!
 
-Here are the steps to interact with the application:
-
-- **Email Validation**:
-  - Send a `POST` request with an email address to `/validate-email`.
-- **Password Strength Check**:
-  - Send a `POST` request with a password to `/check-password`.
-- **Quiz**:
-  - Visit `/quiz` in the browser to take the quiz!
-
----
-
-## 📦 Project Structure
-
-- **`src/main/java`**: Contains all the Java source files.
-- **`src/test/java`**: Contains unit and integration tests.
-- **`src/main/resources/templates`**: Holds HTML templates for the web views.
-
----
-
-## ❤️ Thank You
-
-Thank you for checking out my project!
+Thanks for stopping by! If you run into any issues or have ideas for improvements, feel free to share.

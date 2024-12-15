@@ -1,19 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
 </head>
 <body>
-    <h1>Take the Quiz</h1>
+    <h1>Quiz</h1>
     <form action="/quiz" method="post">
-        <ul>
-            <c:forEach var="question" items="${questions}">
-                <li>
-                    <p>${question.text}</p>
-                    <input type="text" name="answers">
-                </li>
-            </c:forEach>
-        </ul>
+        <div th:each="question, iterStat : ${questions}">
+            <p th:text="${iterStat.index + 1} + '. ' + ${question.question}"></p>
+            <input type="text" name="answers" required>
+        </div>
         <button type="submit">Submit</button>
     </form>
 </body>

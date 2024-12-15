@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Quiz Result</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Results</title>
 </head>
 <body>
-    <h1>Quiz Result</h1>
-    <p>Your Score: <strong th:text="${score}"></strong> / <strong th:text="${total}"></strong></p>
+    <h1>Quiz Results</h1>
+    <p>Your Score: <span th:text="${score}"></span> / <span th:text="${total}"></span></p>
     <ul>
         <li th:each="question : ${questions}">
-            <span th:text="'Q: ' + ${question.text}"></span><br>
-            <span th:if="${question.correct}" style="color:green;">Your Answer: <span th:text="${question.userAnswer}"></span> (Correct)</span>
-            <span th:if="${!question.correct}" style="color:red;">Your Answer: <span th:text="${question.userAnswer}"></span> (Wrong, Correct Answer: <span th:text="${question.answer}"></span>)</span>
+            <p th:text="${question.question}"></p>
+            <p>Your Answer: <span th:text="${question.userAnswer}"></span></p>
+            <p th:if="${question.correct}" style="color: green;">Correct!</p>
+            <p th:if="${!question.correct}" style="color: red;">Incorrect. Correct Answer: <span th:text="${question.answer}"></span></p>
         </li>
     </ul>
-    <a href="/quiz">Retry Quiz</a>
 </body>
 </html>
